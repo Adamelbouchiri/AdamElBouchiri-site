@@ -107,32 +107,24 @@ export default function Navbar() {
             className="md:hidden overflow-hidden border-t border-accent-500/10 bg-white/80 dark:bg-ink-950/80 backdrop-blur-xl"
           >
             <ul className="px-5 py-4 font-mono text-base space-y-1">
-              {NAV_ITEMS.map((item, i) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 }}
-                >
-                  <a
-                    href={`#${item}`}
-                    onClick={(e) => {
-                      e.preventDefault()
+              {NAV_ITEMS.map((item) => (
+                <li key={item}>
+                  <button
+                    type="button"
+                    onClick={() => {
                       setOpen(false)
-                      requestAnimationFrame(() => {
-                        const target = document.getElementById(item)
-                        if (!target) return
-                        const top = target.getBoundingClientRect().top + window.pageYOffset - 72
-                        window.scrollTo({ top, behavior: 'smooth' })
-                        history.replaceState(null, '', `#${item}`)
-                      })
+                      const target = document.getElementById(item)
+                      if (!target) return
+                      const top = target.getBoundingClientRect().top + window.pageYOffset - 72
+                      window.scrollTo({ top, behavior: 'smooth' })
+                      history.replaceState(null, '', `#${item}`)
                     }}
-                    className="block py-2.5 px-3 rounded-lg hover:bg-accent-500/10 transition-colors"
+                    className="w-full text-start block py-2.5 px-3 rounded-lg hover:bg-accent-500/10 transition-colors"
                   >
                     <span className="text-accent-500">/</span>
                     {t(`nav.${item}`)}
-                  </a>
-                </motion.li>
+                  </button>
+                </li>
               ))}
             </ul>
           </motion.div>
