@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "skills": "skills",
+    "projects": "projects",
+    "testimonials": "testimonials",
+    "contact": "contact"
+  },
+  "hero": {
+    "greeting": "// hello, world",
+    "name": "Adam El Bouchiri",
+    "role": "Fullstack Developer",
+    "tagline": "I build modern, performant web experiences end-to-end — from pixel-perfect UI to scalable backends.",
+    "cta_primary": "View Projects",
+    "cta_secondary": "Get in touch",
+    "status": "available for work",
+    "terminal_lines": [
+      "$ who am i",
+      "adam_el_bouchiri",
+      "$ cat role.txt",
+      "Fullstack Developer · Morocco",
+      "$ ls stack/",
+      "react  laravel  tailwind  git",
+      "$ status",
+      "open to opportunities ✨"
+    ]
+  },
+  "about": {
+    "label": "// about",
+    "title": "Building the web, both sides of the stack.",
+    "p1": "I'm a fullstack developer based in Morocco. Over the past two years I've shipped 12 real projects — a year of freelance work alongside my current role at Taahud Corporation, where I've been for the past year.",
+    "p2": "My day-to-day is React on the frontend and Laravel on the backend, glued together with Tailwind, MySQL, and a solid Git workflow. I care about details that ship — accessibility, responsiveness, and the small interactions that make products feel alive.",
+    "stats": {
+      "experience": "Years coding",
+      "projects": "Projects shipped",
+      "tech": "Technologies"
+    }
+  },
+  "skills": {
+    "label": "// stack",
+    "title": "Tools I work with daily.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & DevOps"
+    }
+  },
+  "projects": {
+    "label": "// selected work",
+    "title": "Things I've built.",
+    "view": "View project",
+    "code": "Source",
+    "private": "Private",
+    "items": [
+      {
+        "name": "Crypto Trading Platform",
+        "description": "A private trading dashboard built for an individual client. Integrates the Binance API for live buy/sell orders and account data, CoinGecko for token pricing, and Binance WebSocket streams for real-time charts. Ships with user settings, full trade history, and a connected trading-bot panel.",
+        "tags": ["Laravel", "React", "Tailwind", "Binance API", "CoinGecko", "WebSockets"]
+      },
+      {
+        "name": "Taahud Backend API",
+        "description": "Backend API powering Taahud — an integrated digital platform connecting contractors, individuals, and engineering offices to manage construction projects end-to-end with smart tools for tracking work, managing resources, and generating reliable reports. I built the full Laravel API with complete CRUD across every HTTP verb (POST, GET, PUT, PATCH, DELETE), role-based dashboards for admins, contractors, and every account type, a supplier store for adding products, a project marketplace where individuals post jobs and service providers apply, plus a full notification system.",
+        "tags": ["Laravel", "REST API", "MySQL", "Eloquent"]
+      },
+      {
+        "name": "Taahud — Laravel Blade Remake",
+        "description": "Full Laravel Blade remake of the Taahud platform — the same integrated digital platform connecting contractors, individuals, and engineering offices to streamline construction project management, rebuilt as a server-rendered Laravel app. Includes role-based dashboards for admins, contractors, and every account type, a supplier store where vendors add products, a project marketplace where individuals post jobs and service providers apply, a subscription system that gates platform access with payments handled through the Moyasar gateway, plus a full notification system.",
+        "tags": ["Laravel", "Blade", "Tailwind", "MySQL", "Moyasar"],
+        "liveUrl": "https://taahud.sa"
+      },
+      {
+        "name": "Mini-Coursera LMS (PFE)",
+        "description": "My graduation project for a 6-month fullstack bootcamp — a mini Coursera-style learning platform. Teachers publish lessons made of videos, images, or PDFs and track enrolled students; admins approve new users (who get an email on acceptance) and manage everyone. Premium courses unlock via Stripe payments, and a sequential-progress system blocks learners from jumping ahead until they finish each lesson. A full calendar lists free events, upcoming courses, and the user's own enrolled courses.",
+        "tags": ["Laravel", "Blade", "Tailwind", "Stripe", "MySQL"],
+        "sourceUrl": "https://github.com/Adamelbouchiri/laravel-final-project"
+      },
+      {
+        "name": "Doctor Banani Dentisterie",
+        "description": "Web app for Dr. Banani's dental practice — React frontend (Vite) and Laravel backend. Patients go through a two-step registration, log in with email/password or Google/Facebook OAuth, book and manage appointments, and pay online through Stripe. Each user has account settings to update avatar, name, and password, plus a full forgot/reset password flow. An admin dashboard manages users and every appointment (view, update, delete). Sanctum-secured API with a notification system.",
+        "tags": ["Laravel", "React", "Sanctum", "Stripe", "OAuth", "MySQL"],
+        "sources": [
+          { "label": "Frontend", "url": "https://github.com/Adamelbouchiri/Dentist" },
+          { "label": "Backend", "url": "https://github.com/Adamelbouchiri/Dentist-backend" }
+        ]
+      },
+      {
+        "name": "Xora",
+        "description": "A modern SaaS landing page built with React and Tailwind — marketing hero, feature sections, pricing, and a fully responsive, pixel-tight UI. A frontend showcase focused on polished product-site styling.",
+        "tags": ["React", "Vite", "Tailwind"],
+        "sourceUrl": "https://github.com/Adamelbouchiri/Xora-react.js-tailwind-css",
+        "liveUrl": "https://xora-app-me.netlify.app"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "// testimonials",
+    "title": "What clients say.",
+    "items": [
+      {
+        "name": "Sara Mansouri",
+        "role": "Founder · Atelier Numérique",
+        "quote": "Adam delivered our project on time with clean, maintainable code. Communication was clear and professional throughout."
+      },
+      {
+        "name": "Hicham Bennani",
+        "role": "CTO · Northbeam",
+        "quote": "Solid fullstack engineer — owns the work end-to-end. Our Laravel API has been rock-solid in production."
+      },
+      {
+        "name": "Karim Idrissi",
+        "role": "Product Manager · Pixelware",
+        "quote": "Takes feedback well and ships fast. The frontend he built for us helped us hit our first thousand users."
+      },
+      {
+        "name": "Yasmine Alaoui",
+        "role": "Creative Director · Studio Noor",
+        "quote": "Pixel-perfect implementation of every Figma I sent. Felt like working with a frontend partner, not a vendor."
+      },
+      {
+        "name": "Omar El Khatib",
+        "role": "Founder · Souk Cloud",
+        "quote": "Took our half-finished MVP and shipped it in three weeks. Honest about scope and timelines."
+      },
+      {
+        "name": "Léa Bernard",
+        "role": "Product Lead · Brest Labs",
+        "quote": "Reliable, fast, and thoughtful. The Stripe integration he set up handles our payments without a hitch."
+      },
+      {
+        "name": "Mehdi Tahiri",
+        "role": "Operations Lead · Casa Logistics",
+        "quote": "Adam built our entire admin dashboard. The internal team adopted it on day one."
+      },
+      {
+        "name": "Marwa Tazi",
+        "role": "Marketing Manager · Atlas Media",
+        "quote": "Lightning-fast turnaround on our landing page. Nailed the brief in record time."
+      }
+    ]
+  },
+  "contact": {
+    "label": "// contact",
+    "title": "Let's build something.",
+    "subtitle": "Have a project in mind or just want to say hi? My inbox is always open.",
+    "email_personal": "Personal email",
+    "email_work": "Work email",
+    "call_me": "Call me",
+    "social": "Find me online"
+  },
+  "footer": {
+    "made_with": "Designed & built by Adam El Bouchiri",
+    "rights": "All rights reserved."
+  },
+  "ui": {
+    "lang_label": "Language",
+    "theme_light": "Light mode",
+    "theme_dark": "Dark mode"
+  }
+}

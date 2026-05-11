@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "accueil",
+    "about": "à propos",
+    "skills": "compétences",
+    "projects": "projets",
+    "testimonials": "témoignages",
+    "contact": "contact"
+  },
+  "hero": {
+    "greeting": "// bonjour le monde",
+    "name": "Adam El Bouchiri",
+    "role": "Développeur Fullstack",
+    "tagline": "Je conçois des expériences web modernes et performantes, de bout en bout — d'une UI au pixel près à des backends évolutifs.",
+    "cta_primary": "Voir les projets",
+    "cta_secondary": "Me contacter",
+    "status": "disponible",
+    "terminal_lines": [
+      "$ who am i",
+      "adam_el_bouchiri",
+      "$ cat role.txt",
+      "Développeur Fullstack · Maroc",
+      "$ ls stack/",
+      "react  laravel  tailwind  git",
+      "$ status",
+      "ouvert aux opportunités ✨"
+    ]
+  },
+  "about": {
+    "label": "// à propos",
+    "title": "Le web, des deux côtés de la stack.",
+    "p1": "Je suis développeur fullstack basé au Maroc. Au cours des deux dernières années, j'ai livré 12 vrais projets — une année en freelance et mon poste actuel chez Taahud Corporation, où je travaille depuis un an.",
+    "p2": "Au quotidien, c'est React côté front et Laravel côté back, assemblés avec Tailwind, MySQL et un workflow Git solide. Les détails qui comptent : accessibilité, responsive, et les petites interactions qui donnent vie au produit.",
+    "stats": {
+      "experience": "Années de code",
+      "projects": "Projets livrés",
+      "tech": "Technologies"
+    }
+  },
+  "skills": {
+    "label": "// stack",
+    "title": "Mes outils du quotidien.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & DevOps"
+    }
+  },
+  "projects": {
+    "label": "// travaux sélectionnés",
+    "title": "Ce que j'ai construit.",
+    "view": "Voir le projet",
+    "code": "Code source",
+    "private": "Privé",
+    "items": [
+      {
+        "name": "Plateforme de Trading Crypto",
+        "description": "Un tableau de bord de trading privé conçu pour un client particulier. Intègre l'API Binance pour les ordres d'achat/vente en direct et les données du compte, CoinGecko pour les prix des tokens, et les flux WebSocket Binance pour des graphiques en temps réel. Inclut paramètres utilisateur, historique complet des transactions et un panneau de bot de trading connecté.",
+        "tags": ["Laravel", "React", "Tailwind", "API Binance", "CoinGecko", "WebSockets"]
+      },
+      {
+        "name": "API Back-end Taahud",
+        "description": "API back-end de Taahud — une plateforme numérique intégrée qui connecte entrepreneurs, particuliers et bureaux d'études pour gérer les projets de construction de bout en bout avec des outils intelligents de suivi, de gestion des ressources et de reporting fiable. J'ai construit l'API Laravel complète avec un CRUD intégral couvrant toutes les méthodes HTTP (POST, GET, PUT, PATCH, DELETE), des tableaux de bord par rôle pour admins, entrepreneurs et chaque type de compte, un store fournisseurs pour ajouter des produits, une marketplace de projets où les particuliers publient et où les prestataires postulent, plus un système de notifications complet.",
+        "tags": ["Laravel", "REST API", "MySQL", "Eloquent"]
+      },
+      {
+        "name": "Taahud — Refonte Laravel Blade",
+        "description": "Refonte complète de la plateforme Taahud en Laravel Blade — la même plateforme numérique intégrée qui relie entrepreneurs, particuliers et bureaux d'études pour la gestion de projets de construction de bout en bout, reconstruite comme une application Laravel rendue côté serveur. Inclut des tableaux de bord par rôle pour admins, entrepreneurs et chaque type de compte, un store où les fournisseurs ajoutent leurs produits, une marketplace de projets où les particuliers publient et où les prestataires postulent, un système d'abonnement qui conditionne l'accès à la plateforme avec paiements via la passerelle Moyasar, plus un système de notifications complet.",
+        "tags": ["Laravel", "Blade", "Tailwind", "MySQL", "Moyasar"],
+        "liveUrl": "https://taahud.sa"
+      },
+      {
+        "name": "Mini-Coursera LMS (PFE)",
+        "description": "Mon projet de fin d'études après une formation fullstack de 6 mois — une plateforme d'apprentissage mini-Coursera. Les enseignants publient des leçons (vidéos, images, PDFs) et suivent les étudiants inscrits ; les admins approuvent les nouveaux utilisateurs (qui reçoivent un email à l'acceptation) et gèrent l'ensemble. Les cours premium se débloquent via paiement Stripe, et un système de progression séquentielle empêche les apprenants de passer à la leçon suivante avant d'avoir terminé la courante. Un calendrier complet liste les événements gratuits, les cours à venir et les cours auxquels l'utilisateur est inscrit.",
+        "tags": ["Laravel", "Blade", "Tailwind", "Stripe", "MySQL"],
+        "sourceUrl": "https://github.com/Adamelbouchiri/laravel-final-project"
+      },
+      {
+        "name": "Doctor Banani Dentisterie",
+        "description": "Application web pour le cabinet dentaire du Dr. Banani — front-end React (Vite) et back-end Laravel. Les patients s'inscrivent via un parcours en deux étapes, se connectent par email/mot de passe ou OAuth Google/Facebook, prennent et gèrent leurs rendez-vous, et paient en ligne via Stripe. Chaque utilisateur dispose de paramètres pour modifier avatar, nom et mot de passe, avec un flux complet de mot de passe oublié/réinitialisation. Un tableau de bord admin gère les utilisateurs et tous les rendez-vous (consultation, modification, suppression). API sécurisée par Sanctum avec système de notifications.",
+        "tags": ["Laravel", "React", "Sanctum", "Stripe", "OAuth", "MySQL"],
+        "sources": [
+          { "label": "Frontend", "url": "https://github.com/Adamelbouchiri/Dentist" },
+          { "label": "Backend", "url": "https://github.com/Adamelbouchiri/Dentist-backend" }
+        ]
+      },
+      {
+        "name": "Xora",
+        "description": "Une landing page SaaS moderne en React et Tailwind — hero marketing, sections de fonctionnalités, tarifs et une UI entièrement responsive et pixel-perfect. Une vitrine front-end axée sur le style soigné des sites produit.",
+        "tags": ["React", "Vite", "Tailwind"],
+        "sourceUrl": "https://github.com/Adamelbouchiri/Xora-react.js-tailwind-css",
+        "liveUrl": "https://xora-app-me.netlify.app"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "// témoignages",
+    "title": "Ce que disent les clients.",
+    "items": [
+      {
+        "name": "Sara Mansouri",
+        "role": "Fondatrice · Atelier Numérique",
+        "quote": "Adam a livré notre projet dans les délais avec un code propre et maintenable. Communication claire et professionnelle du début à la fin."
+      },
+      {
+        "name": "Hicham Bennani",
+        "role": "CTO · Northbeam",
+        "quote": "Ingénieur fullstack solide — il prend en main de A à Z. Notre API Laravel tourne sans accroc en production."
+      },
+      {
+        "name": "Karim Idrissi",
+        "role": "Product Manager · Pixelware",
+        "quote": "Il accueille bien les retours et livre vite. Le front-end qu'il a construit nous a aidés à atteindre nos mille premiers utilisateurs."
+      },
+      {
+        "name": "Yasmine Alaoui",
+        "role": "Directrice Créative · Studio Noor",
+        "quote": "Implémentation pixel-perfect de chaque Figma envoyé. J'avais l'impression de travailler avec un partenaire front-end, pas un prestataire."
+      },
+      {
+        "name": "Omar El Khatib",
+        "role": "Fondateur · Souk Cloud",
+        "quote": "Il a repris notre MVP à moitié fini et l'a livré en trois semaines. Honnête sur le périmètre et les délais."
+      },
+      {
+        "name": "Léa Bernard",
+        "role": "Product Lead · Brest Labs",
+        "quote": "Fiable, rapide et réfléchi. L'intégration Stripe qu'il a mise en place gère nos paiements sans le moindre souci."
+      },
+      {
+        "name": "Mehdi Tahiri",
+        "role": "Responsable Opérations · Casa Logistics",
+        "quote": "Adam a construit tout notre tableau de bord admin. L'équipe interne l'a adopté dès le premier jour."
+      },
+      {
+        "name": "Marwa Tazi",
+        "role": "Responsable Marketing · Atlas Media",
+        "quote": "Délai éclair sur notre landing page. Brief parfaitement saisi en un temps record."
+      }
+    ]
+  },
+  "contact": {
+    "label": "// contact",
+    "title": "Construisons quelque chose.",
+    "subtitle": "Un projet en tête ou juste envie de dire bonjour ? Ma boîte de réception est toujours ouverte.",
+    "email_personal": "Email personnel",
+    "email_work": "Email professionnel",
+    "call_me": "M'appeler",
+    "social": "Me retrouver en ligne"
+  },
+  "footer": {
+    "made_with": "Conçu et développé par Adam El Bouchiri",
+    "rights": "Tous droits réservés."
+  },
+  "ui": {
+    "lang_label": "Langue",
+    "theme_light": "Mode clair",
+    "theme_dark": "Mode sombre"
+  }
+}
