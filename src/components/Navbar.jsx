@@ -119,11 +119,13 @@ export default function Navbar() {
                     onClick={(e) => {
                       e.preventDefault()
                       setOpen(false)
-                      const target = document.getElementById(item)
-                      if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      requestAnimationFrame(() => {
+                        const target = document.getElementById(item)
+                        if (!target) return
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - 72
+                        window.scrollTo({ top, behavior: 'smooth' })
                         history.replaceState(null, '', `#${item}`)
-                      }
+                      })
                     }}
                     className="block py-2.5 px-3 rounded-lg hover:bg-accent-500/10 transition-colors"
                   >
