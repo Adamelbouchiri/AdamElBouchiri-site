@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import ThemeToggle from './ThemeToggle'
@@ -36,90 +36,93 @@ export default function Navbar() {
     return () => observer.disconnect()
   }, [])
 
+  const handleNavClick = (item) => {
+    setOpen(false)
+    const target = document.getElementById(item)
+    if (!target) return
+    const top = target.getBoundingClientRect().top + window.pageYOffset - 72
+    window.scrollTo({ top, behavior: 'smooth' })
+    history.replaceState(null, '', `#${item}`)
+  }
+
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'py-3 bg-white/70 dark:bg-ink-950/70 backdrop-blur-xl border-b border-accent-500/10'
-          : 'py-5 bg-transparent border-b border-transparent'
-      }`}
-    >
-      <nav className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#home"
-          className="flex items-center gap-2 group"
-          aria-label="Adam El Bouchiri — home"
-        >
-          <span className="font-mono text-lg font-bold tracking-tight">
-            <span className="text-accent-500">~/</span>Adam
-            <span className="text-accent-500 animate-blink">_</span>
-          </span>
-        </a>
-
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-1 font-mono text-sm">
-          {NAV_ITEMS.map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item}`}
-                className={`relative px-3 py-2 transition-colors ${
-                  active === item ? 'text-accent-500' : 'opacity-70 hover:opacity-100'
-                }`}
-              >
-                <span className="opacity-50">/</span>
-                {t(`nav.${item}`)}
-                {active === item && (
-                  <motion.span
-                    layoutId="nav-active"
-                    className="absolute inset-x-2 -bottom-0.5 h-px bg-accent-500"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Right controls */}
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher />
-          <ThemeToggle />
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden w-10 h-10 rounded-lg border border-accent-500/20 hover:border-accent-500/50 flex items-center justify-center"
-            aria-label="Menu"
-            aria-expanded={open}
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? 'py-3 bg-white/70 dark:bg-ink-950/70 backdrop-blur-xl border-b border-accent-500/10'
+            : 'py-5 bg-transparent border-b border-transparent'
+        }`}
+      >
+        <nav className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="flex items-center gap-2 group"
+            aria-label="Adam El Bouchiri — home"
           >
-            {open ? <X className="w-4 h-4 text-accent-500" /> : <Menu className="w-4 h-4 text-accent-500" />}
-          </button>
-        </div>
-      </nav>
+            <span className="font-mono text-lg font-bold tracking-tight">
+              <span className="text-accent-500">~/</span>Adam
+              <span className="text-accent-500 animate-blink">_</span>
+            </span>
+          </a>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden border-t border-accent-500/10 bg-white/80 dark:bg-ink-950/80 backdrop-blur-xl"
-          >
+          {/* Desktop nav */}
+          <ul className="hidden md:flex items-center gap-1 font-mono text-sm">
+            {NAV_ITEMS.map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item}`}
+                  className={`relative px-3 py-2 transition-colors ${
+                    active === item ? 'text-accent-500' : 'opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <span className="opacity-50">/</span>
+                  {t(`nav.${item}`)}
+                  {active === item && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-x-2 -bottom-0.5 h-px bg-accent-500"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Right controls */}
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden w-10 h-10 rounded-lg border border-accent-500/20 hover:border-accent-500/50 flex items-center justify-center"
+              aria-label="Menu"
+              aria-expanded={open}
+            >
+              {open ? <X className="w-4 h-4 text-accent-500" /> : <Menu className="w-4 h-4 text-accent-500" />}
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile drawer — rendered outside the header so taps land on the buttons reliably on mobile WebKit */}
+      {open && (
+        <>
+          <div
+            onClick={() => setOpen(false)}
+            className="md:hidden fixed inset-0 z-[60] bg-black/40"
+            aria-hidden="true"
+          />
+          <div className="md:hidden fixed top-[64px] inset-x-0 z-[70] bg-white dark:bg-ink-950 border-t border-accent-500/10 shadow-2xl">
             <ul className="px-5 py-4 font-mono text-base space-y-1">
               {NAV_ITEMS.map((item) => (
                 <li key={item}>
                   <button
                     type="button"
-                    onClick={() => {
-                      setOpen(false)
-                      const target = document.getElementById(item)
-                      if (!target) return
-                      const top = target.getBoundingClientRect().top + window.pageYOffset - 72
-                      window.scrollTo({ top, behavior: 'smooth' })
-                      history.replaceState(null, '', `#${item}`)
-                    }}
-                    className="w-full text-start block py-2.5 px-3 rounded-lg hover:bg-accent-500/10 transition-colors"
+                    onClick={() => handleNavClick(item)}
+                    className="w-full text-start block py-3 px-3 rounded-lg hover:bg-accent-500/10 active:bg-accent-500/20 transition-colors"
                   >
                     <span className="text-accent-500">/</span>
                     {t(`nav.${item}`)}
@@ -127,9 +130,9 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          </div>
+        </>
+      )}
+    </>
   )
 }
