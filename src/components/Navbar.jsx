@@ -116,7 +116,15 @@ export default function Navbar() {
                 >
                   <a
                     href={`#${item}`}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setOpen(false)
+                      const target = document.getElementById(item)
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        history.replaceState(null, '', `#${item}`)
+                      }
+                    }}
                     className="block py-2.5 px-3 rounded-lg hover:bg-accent-500/10 transition-colors"
                   >
                     <span className="text-accent-500">/</span>
