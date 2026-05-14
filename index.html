@@ -50,6 +50,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://adamelbouchiri.com/#person",
         "name": "Adam El Bouchiri",
         "alternateName": ["Adam El Bouchir", "Adam Elbouchiri", "Adam el bouchiri", "آدم البوشيري"],
         "givenName": "Adam",
@@ -71,6 +72,32 @@
           "@type": "ContactPoint",
           "telephone": "+212-7-67-75-94-00",
           "contactType": "professional"
+        }
+      }
+    </script>
+
+    <!-- Structured Data: WebPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://adamelbouchiri.com/#webpage",
+        "url": "https://adamelbouchiri.com/",
+        "name": "Adam El Bouchiri — Fullstack Developer | React, Laravel",
+        "description": "Mid-level fullstack developer based in Morocco. Building modern web experiences with React, Laravel, and Tailwind CSS.",
+        "inLanguage": "en",
+        "about": { "@id": "https://adamelbouchiri.com/#person" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://adamelbouchiri.com/og-image.png",
+          "width": 1280,
+          "height": 720
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://adamelbouchiri.com/og-image.png",
+          "width": 1280,
+          "height": 720
         }
       }
     </script>
